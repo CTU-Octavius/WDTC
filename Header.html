@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Deveopment Team Challenge</title>
-<style>
+    <title>Web Development Team Challenge</title>
+    <style>
         /* Basic reset */
         * {
             margin: 0;
@@ -12,13 +12,28 @@
             box-sizing: border-box;
         }
 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-image: url('https://img.freepik.com/free-photo/palm-tree-isle_1048-2656.jpg?semt=ais_hybrid');
+            background-size: cover; 
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            position: relative;
+        }
+
         /* Navbar Styles */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #333;
+            background-color: rgba(51, 51, 51, 0.8); /* Slight transparency */
             padding: 10px 20px;
+            position: fixed; /* Fixed position */
+            top: 0; /* Position at the top of the page */
+            width: 100%; /* Full width */
+            z-index: 10; /* Ensure it stays on top of other content */
         }
 
         .logo img {
@@ -46,17 +61,33 @@
             border-radius: 4px;
         }
 
-         .menu-icon {
-            display: none;
-            cursor: pointer;
+        /* Centering the content (Button at the bottom) */
+        .container {
+            position: absolute;
+            bottom: 20px; /* Distance from the bottom */
+            left: 50%;
+            transform: translateX(-50%); /* Centers the button horizontally */
+            text-align: center;
         }
 
-        .menu-icon div {
-            width: 30px;
-            height: 4px;
-            background-color: white;
-            margin: 6px 0;
-            transition: 0.4s;
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            color: white;
+            background-color: blueviolet;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        button:active {
+            transform: scale(1.05);
         }
 
         /* Media query for mobile screens */
@@ -76,10 +107,6 @@
             .navbar.active .nav-links {
                 display: flex; /* Show the links when the menu is active */
             }
-
-            .menu-icon {
-                display: block; /* Show the menu icon on small screens */
-            }
         }
     </style>
 </head>
@@ -87,7 +114,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <img src="free.avif" alt="Logo">
+                <img src="https://img.freepik.com/premium-vector/web-design-logo-vector-templet_1070930-291.jpg?semt=ais_hybrid" alt="Logo">
             </div>
             <ul class="nav-links">
                 <li><a href="#">About</a></li>
@@ -95,12 +122,18 @@
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-            <div class="menu-icon" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
         </nav>
     </header>
+
+    <div class="container">
+        <button id="signup-btn">Sign Up Now</button>
+    </div>
+
+    <script>
+        document.getElementById("signup-btn").addEventListener("click", function() {
+            alert("Congratulations You Have Successfully Signed Up!");
+        });
+    </script>
+
 </body>
 </html>
