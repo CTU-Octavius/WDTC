@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Deveopment Team Challenge</title>
+<style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        .logo img {
+            width: 100px; /* Adjust the size of the logo */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin: 0 15px; /* Space out the links */
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 5px 10px;
+        }
+
+        .nav-links a:hover {
+            background-color: #555; /* Change the background on hover */
+            border-radius: 4px;
+        }
+
+         .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        /* Media query for mobile screens */
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                display: none; /* Hide the links on mobile */
+                width: 100%;
+                text-align: center;
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            .nav-links li {
+                margin: 10px 0; /* Space out the links vertically */
+            }
+
+            .navbar.active .nav-links {
+                display: flex; /* Show the links when the menu is active */
+            }
+
+            .menu-icon {
+                display: block; /* Show the menu icon on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="free.avif" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
